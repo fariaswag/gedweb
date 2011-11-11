@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID" version="2.4">
+  <javaee:display-name>gedweb</javaee:display-name>
+  <context-param>
+    <javaee:param-name>javax.faces.DEFAULT_SUFFIX</javaee:param-name>
+    <javaee:param-value>.xhtml</javaee:param-value>
+  </context-param>
+  <context-param>
+    <javaee:description>State saving method: 'client' or 'server' (=default). See JSF Specification 2.5.2</javaee:description>
+    <javaee:param-name>javax.faces.STATE_SAVING_METHOD</javaee:param-name>
+    <javaee:param-value>client</javaee:param-value>
+  </context-param>
+  <context-param>
+    <javaee:param-name>javax.servlet.jsp.jstl.fmt.localizationContext</javaee:param-name>
+    <javaee:param-value>resources.application</javaee:param-value>
+  </context-param>
+  <context-param>
+    <javaee:param-name>org.jboss.jbossfaces.WAR_BUNDLES_JSF_IMPL</javaee:param-name>
+    <javaee:param-value>true</javaee:param-value>
+  </context-param>
+  <context-param>
+    <javaee:param-name>primefaces.THEME</javaee:param-name>
+    <javaee:param-value>bluesky</javaee:param-value>
+  </context-param>
+  <listener>
+    <javaee:listener-class>com.sun.faces.config.ConfigureListener</javaee:listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>Faces Config</servlet-name>
+    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Faces Config</servlet-name>
+    <url-pattern>*.jsf</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsf</welcome-file>
+  </welcome-file-list>
+</web-app>
